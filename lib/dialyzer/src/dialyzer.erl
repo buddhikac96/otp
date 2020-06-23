@@ -151,6 +151,7 @@ cl(Opts) ->
 -spec run(dial_options()) -> [dial_warning()].
 
 run(Opts) ->
+  io:format("Test build"),
   try dialyzer_options:build([{report_mode, quiet},
 			      {erlang_mode, true}|Opts]) of
     {error, Msg} ->
